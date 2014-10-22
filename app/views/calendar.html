@@ -1,0 +1,63 @@
+<div class="row">
+<div class="col-xs-12">
+<img src="/images/crosscreate.png" class="crosstwo"/>
+</div>
+</div>
+
+ 
+   <div class="col-xs-10 googlecal">
+      <section id="directives-calendar" ng-controller="GcalCtrl">  
+           <div class="well calendarwell">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div class="btn-group calTools">              
+                          <button class="btn  calendarbuttontwo" ng-click="addRemoveEventSource(eventSources,eventSource)">
+                            View only Church Events
+                          </button>
+                          
+                        </div>
+
+                        <ul class="unstyled">
+                            <!-- <li ng-repeat="e in events">
+                                <div class="alert alert-info">
+                                    <a class="close" ng-click="remove($index)"><i class="icon-remove"></i></a>
+                                    <b> <input ng-model="e.title"></b> 
+                                    {{e.start | date:"MMM dd"}} - {{e.end | date:"MMM dd"}}
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="alert-success calAlert" ng-show="alertMessage != undefined && alertMessage != ''">
+                                <h4>{{alertMessage}}</h4>
+                              </div>
+                              
+                            <div class="calendar well" ng-model="eventSources" calendar="myCalendar2" config="uiConfig.calendar" ui-calendar="uiConfig.calendar">
+                          <!--    my calendar appears here -->
+                            </div>
+                </div>
+          </section>
+      </div>
+  <!--   <div class="col-xs-2 twittercalendar">
+    <a class="twitter-timeline" href="https://twitter.com/DrDexterEasley" data-widget-id="519217496314753024">Tweets by @DrDexterEasley</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div> -->
+
+<div class="col-xs-12 upto">
+<div id="upto-calendar-container-IvOO" class="upto-calendar-plugin upto-wrapper">
+ <script>!function(c,b,a){function d(h){var e=document.getElementById("upto-calendar-container-"+c),f=document.createElement("SCRIPT"),g=" http://upto.com/js/plugin.js";f.onreadystatechange=function(){if(f.readyState==="loaded"||f.readyState==="complete"){f.onreadystatechange=null;h()}};f.onload=function(){h()};f.setAttribute("src",g);e.parentNode.insertBefore(f,e)}d(function(){upto.init(c)})}("IvOO");
+</script>
+</div>
+</div>
+
+                              
+                         
+
+
+
+
+
+
+
+
+

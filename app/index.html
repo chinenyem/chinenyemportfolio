@@ -1,0 +1,163 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    
+    <!-- Important Owl stylesheet -->
+    
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Default Theme -->
+    
+    <!-- endbuild -->
+  </head>
+  <body ng-app="talkreserveApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+     <source src="images/MaliMusicHeavyLove.mp4" type="video/mp4">
+     <source src="movie.webm" type="video/webm">
+          Sorry, your browser does not support HTML5 video.
+</video>
+
+
+<header class="cd-header">
+    <nav>
+      <ul class="cd-secondary-nav">
+        <li><img src="../images/LOGO1.png" alt="Logo"></li>
+        <li><a ng-hide-auth="" href="#/login">Log In</a></li>
+        <li><a ng-show-auth="" href="#/account">Account</a></li>
+      </ul>
+    </nav> <!-- cd-nav -->
+
+    <a class="cd-primary-nav-trigger" href="#0">
+      <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+    </a> <!-- cd-primary-nav-trigger -->
+  </header>
+
+  <nav>
+    <ul class="cd-primary-nav">
+
+        <li><a ng-show-auth="" href="#/account"  class="afontsize" >Account</a></li>
+        <li><a ng-href="#" class="afontsize">Home</a></li>
+
+
+      <li class="cd-label">Process Order</li>
+
+        <li><a ng-href="#/orderTwo" class="afontsize">Reserve Talk</a></li>
+
+      <li class="cd-label">Be a Volunteer</li>
+
+        <li><a ng-href="#/chat" class="afontsize">Volunteer</a></li>
+
+      <li class="cd-label">Schedule</li>
+
+        <li><a ng-href="#/calendar" class="afontsize">Calendar</a></li>
+
+      <li class="cd-label">Follow New Life</li>
+      
+      <li class="cd-social cd-facebook"><a href="https://www.facebook.com/dexter.easley.7?fref=ts">Facebook</a></li>
+      <li class="cd-social cd-dribbble"><a href="http://newlifegcsc.org/">Dribbble</a></li>
+      <li class="cd-social cd-twitter"><a href="https://twitter.com/DrDexterEasley">Twitter</a></li>
+    </ul>
+  </nav>
+
+
+
+
+
+    <!-- Add your site or application content here -->
+   
+
+
+      <div ng-view="" class="snipsviews">
+        
+      </div>
+
+
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+    <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- endbower -->
+    <script src="bower_components/fullcalendar/dist/gcal.js"></script>
+    <!-- endbuild -->
+
+
+
+    
+
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/angularfire/config.js"></script>
+        <script src="scripts/angularfire/firebase.utils.js"></script>
+        <script src="scripts/controllers/chat.js"></script>
+        <script src="scripts/filters/reverse.js"></script>
+        <script src="scripts/angularfire/simpleLogin.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/account.js"></script>
+        <script src="scripts/directives/ngShowAuth.js"></script>
+        <script src="scripts/directives/ngHideAuth.js"></script>
+        <script src="scripts/routes.js"></script>
+        <script src="scripts/controllers/mandrill.js"></script>
+        <script src="scripts/controllers/ordertwo.js"></script>
+        <script src="scripts/services/mandrillSVC.js"></script>
+        <script src="scripts/services/ordertwoSVC.js"></script>
+        <script src="scripts/controllers/style.js"></script>
+        <script src="scripts/controllers/gcal.js"></script>
+        <script src="scripts/controllers/inventory.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

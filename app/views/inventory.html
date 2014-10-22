@@ -1,0 +1,62 @@
+
+
+<p>Total Store Inventory: {{products.length}}</p>
+
+<div class="table-responsive" >
+<table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>PLU</th>
+            <th>Number</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr ng-repeat="product in products ">
+            <td><input type="text" ng-model="product.item" class="inputcolor form-control"/></td>
+            <td><input type="text" ng-model="product.style" class="inputcolor form-control" /></td>
+             <td><input type="number" ng-model="product.price" class="inputcolor form-control" /></td>
+            <td><input type="number" ng-model="product.number" class="inputcolor form-control" /></td>
+            <td><input type="text" ng-model="product.origin" class="inputcolor form-control" /></td>
+            <td><p>{{ total() }}</p></td>
+            <td>
+                <button class="btn registerorlogin" ng-click=products.$remove(product) :true >Remove</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+ </div>
+
+ 
+
+
+    <div class="well">
+        <h4>Add Item</h4>
+
+        <form class="form-inline" role="form"  >
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="newProduct.item" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="newProduct.style" placeholder="PLU">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="newProduct.price" placeholder="Number">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="newProduct.number" placeholder="Number">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="newProduct.origin" placeholder="Number">
+            </div>
+            <!-- <div class="form-group">
+                <input type="number" class="form-control" ng-model="newProduct.number" placeholder="">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="newProduct.number" placeholder="Email">
+            </div> -->
+            <button class="btn registerorlogin" class="btn btn-default" ng-click="addProduct(newProduct);product = {};">Add</button>
+        </form>
+    </div>
+

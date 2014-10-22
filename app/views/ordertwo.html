@@ -1,0 +1,71 @@
+
+<div class="row">
+<div class="col-xs-12">
+<img src="/images/crosscreate.png" class="crosstwo"/>
+</div>
+</div>
+
+ <div class="well">
+
+	<h4 class="leaderheader">Add Order Reserve</h4>
+		<div>
+			
+
+		</div>
+
+<form>
+<input class="form-control" type="text" ng-model="search.month" placeholder="Search by Month and Year" >
+<input class="form-control" type="text" ng-model="search.lesson" placeholder="Search by Topic">
+</form>
+
+	  <form ng-submit="addItem()">
+
+	  			<select ng-model="newItem.selectedTopic" ng-options="obj.month for obj in sermon |  filter:search:strict" class="inputtextfont" size="2"></select>
+
+				<select ng-model="newItem.selectedGenre" size="2"  id="selectbox">
+					<option class="scroll" ng-repeat="label in sermon[newItem.selectedTopic.id].lesson" >{{label}}</option>
+
+
+				</select>
+       
+
+
+				<hr>
+                <input type="text" class="form-control inputtextfont" ng-model="newItem.name" placeholder="Name">
+                <input type="email" class="form-control inputtextfont" ng-model="newItem.email" placeholder="Email">
+                <input type="text" class="form-control inputtextfont" ng-model="newItem.payment" placeholder="Cash, Check, Credit Card">
+                <input type="text" class="form-control inputtextfont" ng-model="newItem.paid" placeholder="Paid? Yes or No">
+                <input type="tel" class="form-control inputtextfont" ng-model="newItem.phone" placeholder="Phone Number">
+                <input type="number" class="form-control inputtextfont" ng-model="newItem.price" placeholder="If applicable total balance">
+            		<button type="submit" class="btn btn-default inputtextfont">Add</button>
+       </form>
+</div>
+
+  <div class="well">
+ 		<form>
+                
+               <textarea class="form-control" ng-repeat="item in items" rows="8" cols="90" >
+               Date Reserved: {{item.date | date: 'M/d/yy h:mm a'}}
+               Product:  {{item.selectedGenre}}
+               Client Name: 	{{item.name}}
+               Email Address: 	{{item.email}}
+               Phone Number: {{item.phone}}
+               Total Cost:  {{item.price | currency}}
+               Payment Type:  {{item.payment}}
+               Item Paid for:  {{item.paid}}
+                </textarea> 
+               	<button ng-click="removeItem(item)" class="btn btn-default navbar-link inputtextfont">Remove</button>
+               	<button class=" btn btn-default navbar-link inputtextfont">
+                <a href="mailto:chnw1947@gmail.com?cc=newlife.robinb14@yahoo.com&subject=Talkreserve&Big%20News&body=DateReserved:{{item.date}} Product:{{item.selectedGenre}} Client Name:{{item.name}} EmailAddress:{{item.email}} Phone Number: {{item.phone}} TotalCost:{{item.price|currency}} PaymentType:{{item.payment}} Item Paid for:{{item.paid}}">send email</a>
+                </button>
+        	</form>
+    </div>
+
+
+
+
+
+
+
+
+

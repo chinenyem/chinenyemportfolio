@@ -1,0 +1,9 @@
+{
+  "firebase": "talkreserve",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

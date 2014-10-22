@@ -1,0 +1,87 @@
+
+<div class="row">
+<div class="col-xs-12">
+<img src="/images/crosscreate.png" class="crosstwo"/>
+</div>
+</div>
+
+
+<div class="row-fluid">
+<div class="{{user.provider === 'password'? 'col-md-4' : 'col-md-12'}}">
+  <h3 class="leaderheader">Profile</h3>
+
+  <form role="form">
+    <p class="form-group">
+      <label class="inputtextfontheader">Account ID</label>
+     <p class="inputtextfontheader"> {{user.uid}}</p>
+    </p>
+
+    <p class="form-group">
+      <label class="inputtextfontheader">Name:</label>
+      <input type="text" name="name" ng-model="profile.name" class="form-control" />
+    </p>
+
+    <p class="form-group">
+      <label class="inputtextfontheader">Email:</label>
+      <input type="text" name="email" ng-model="profile.email" class="form-control" />
+    </p>
+  </form>
+
+  <p>
+    <button role="button" ng-click="logout()" class="btn btn-default">Log Out</button>
+  </p>
+</div>
+
+<div class="col-md-4" ng-show="{{user.provider === 'password'}}">
+<form role="form">
+  <h3>Change Password</h3>
+
+  <p class="form-group">
+    <label class="inputtextfontheader">Old Password:</label>
+    <input type="password" ng-keypress="clear()" ng-model="oldpass" class="form-control" />
+  </p>
+
+  <p class="form-group">
+    <label class="inputtextfontheader">New Password:</label>
+    <input type="password" ng-keypress="clear()" ng-model="newpass" class="form-control" />
+  </p>
+
+  <p class="form-group">
+    <label class="inputtextfontheader">Confirm New Password:</label>
+    <input type="password" ng-keypress="clear()" ng-model="confirm" class="form-control" />
+  </p>
+
+  <button class="btn btn-default" ng-click="changePassword(oldpass, newpass, confirm)">change password</button>
+
+  <p class="error" ng-show="err">{{err}}</p>
+  <p class="good" ng-show="msg">{{msg}}</p>
+</form>
+</div>
+
+<div class="col-md-4" ng-show="{{user.provider === 'password'}}">
+<form>
+  <h3>Change Email</h3>
+
+  <p class="form-group">
+    <label class="inputtextfontheader">New Email:</label>
+    <input type="text" ng-keypress="clear()" ng-model="newEmail" class="form-control" />
+  </p>
+
+  <p class="form-group">
+    <label class="inputtextfontheader">Password:</label>
+    <input type="password" ng-keypress="clear()" ng-model="pass" class="form-control" />
+  </p>
+
+  <button class="btn btn-default" ng-click="changeEmail(pass, newEmail)">update email</button>
+</form>
+</div>
+
+
+<p class="clearfix"></p>
+<div ng-repeat="message in messages" class="alert alert-{{message.type}}">{{message.text}}</div>
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+
+
+
+<div class="row">
+<div class="col-xs-12">
+<img src="/images/crosscreate.png" class="crosstwo"/></div>
+</div>
+
+
+<form class="searchform">
+<input class="form-control" type="text" ng-model="search.leader" placeholder="Search by leader" >
+<input class="form-control" type="text" ng-model="search.ministry" placeholder="Search by ministry">
+<input class="form-control" type="text" ng-model="search.position" placeholder="Search by position">
+</form>
+
+
+
+<div class="row ">
+  <div class="col-xs-6 well volunteerheaderthree">
+<h3>Choose a volunteer oppurtunity</h3>
+  </div>
+  <div class="col-xs-6 well volunteerheadertwo">
+  <h3>I will volunteer with...</h3>
+  </div>
+</div>
+
+
+
+
+<div class="row rowvolunteer">
+<div id="messages" ng-show="messages.length" class="well  col-xs-6 volunteerrowone">
+<section ng-repeat="message in messages |  filter:search:strict | reverse  " ng-change="messages.$save(message)" ng-model="message.day" class="messagesectiondiv"  class="scroll">
+  <img src=""/>
+  <p>{{message.leader}}</p>
+  <p>{{message.ministry}}</p>
+  <p>{{message.email}}</p>
+  <p>{{message.position}}</p>
+  <p>{{message.description}}</p>
+  <button  class="btn volunteerbutton" ng-click=messages.$remove(message) :true >Leader Remove Opp from list</button>
+  <button class="btn volunteerbutton" ng-click="addVolunteer(message);volunteer = {};">Choose volunteer job</button>
+</section>
+</div>
+
+
+<!-- startbox for volunteer positions wanted --> 
+<div id="volunteer" ng-show="volunteers.length" class="well  col-xs-6 volunteerrowtwo">
+<section ng-repeat="volunteer in volunteers | reverse " ng-model="volunteer.day" class=" messagesectiondiv scroll">
+  <p>{{volunteer.leader}}</p>
+  <p>{{volunteer.ministry}}</p>
+  <p>{{volunteer.email}}</p>
+  <p>{{volunteer.position}}</p>
+  <p>{{volunteer.description}}</p>
+  <button class="btn volunteerbutton" ng-click=volunteers.$remove(volunteer) :true >Remove volunteer choice</button>
+  <button class=" btn volunteerbutton"><a href="mailto:chnw1947@gmail.com?cc=newlife.robinb14@yahoo.com&subject=Volunteer Interest Form">send email to ministry</a></button>
+</section>
+</div>
+</div>
+
+<form class="well form">
+<h3> Ministry Leader add volunteer oppurtunity here <i class="fa fa-pencil fa-lg"></i></h3>
+  <input type="text" ng-model="newMessage.leader" placeholder="Ministry Leader" class="form-control inputcolor">
+  <input type="text" ng-model="newMessage.ministry" placeholder="Ministry" class="form-control inputcolor">
+  <input type="email" ng-model="newMessage.email" placeholder="Email" class="form-control inputcolor">
+  <input type="text" ng-model="newMessage.position" placeholder="Volunteer Position" class="form-control inputcolor">
+  <textarea type="text" ng-model="newMessage.description" placeholder="Volunteer Description" class="form-control inputcolor" rows="3"></textarea>
+  <button class="btn volunteerbuttontwo" type="submit" ng-click="addMessage(newMessage);newMessage = {};">Add open volunteer job</button>
+</form>
+
+
+
+
+
+<p class="alert alert-danger" ng-show="err">{{err}}</p>
+
+
+
+
+
